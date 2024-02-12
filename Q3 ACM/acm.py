@@ -12,7 +12,7 @@ INFINITY = math.inf
 #add a return value, but don't use other librairies
 
 
-print("test")
+print("test ")
 
 def read_problems(input_file):
     # lecture du fichier/file reading
