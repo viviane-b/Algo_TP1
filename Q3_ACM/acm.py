@@ -19,6 +19,8 @@ def read_problems(input_file):
     file = open(input_file,"r")
     lines = file.readlines()
     file.close()
+    print("read")
+    print(lines)
 
 def write(fileName, content):
     #écrire la sortie dans un fichier/write output in file
@@ -31,11 +33,13 @@ def write(fileName, content):
 def main(args):
     input_file = args[0]
     output_file = args[1]
+    read_problems(input_file)
     #TODO : Continuer ici/Complete here...
     #Vous pouvez découper votre code en d'autres fonctions...
     #You may split your code in other functions...
 
 
+# TODO
 # Parse du fichier
 # Calculer la distance entre les sommets = cout
 # faire l'algo d'ACM: Prim
