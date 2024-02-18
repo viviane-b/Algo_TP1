@@ -1,5 +1,5 @@
-//Cassandre, 20210863
-//Viviane, [matricule]
+//Cassandre Hamel, 20210863
+//Viviane Binet, 20244728
 #include "PrimeCalculator.h"
 #include <stdio.h> //c libraries
 #include <stdlib.h>

@@ -1,15 +1,11 @@
-#Nom, Matricule
-#Nom, Matricule
+# Cassandre Hamel, 20210863
+# Viviane Binet, 20244728
 
 import math
 import sys
 INFINITY = math.inf
 
-#Fonctions pour lire/écrire dans les fichier. Vous pouvez les modifier, 
-#faire du parsing, rajouter une valeur de retour, mais n'utilisez pas
-#d'autres librairies.
-#Functions to read/write in files. you can modify them, do some parsing,
-#add a return value, but don't use other librairies
+
 
 
 
@@ -85,6 +81,8 @@ def main(args):
         firstVertex = vertices[0]
         dist[0] = 0
         v = firstVertex
+
+        # Initialiser les distances
         for u in vertToAdd:
             dist[u] = distance(v, vertices[u])
 
@@ -107,20 +105,6 @@ def main(args):
         toWrite += str(totalDist) + "\n"
 
     write(output_file, toWrite)
-
-
-
-
-
-
-
-# TODO
-# Parse du fichier
-# Calculer la distance entre les sommets = cout
-# faire l'algo d'ACM: Prim
-# calculer la somme de cout de l'ACM
-# ecrire dans le fichier d'output
-
 
 
 

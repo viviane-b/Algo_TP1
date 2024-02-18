@@ -1,5 +1,6 @@
-#Nom, Matricule
-#Nom, Matricule
+# Cassandre Hamel, 20210863
+# Viviane Binet, 20244728
+
 
 # cette classe sert a créer les cartes du jeu dans le fichier cartes.txt
 # this class is used to create the game cards in the cartes.txt file
@@ -19,7 +20,7 @@ class Generator():
         n = self.order
     
 
-        # initialize matrix
+        # initialiser la matrice
         matrixNN = [[] for _ in range(n*n)]
         matrixNN1 = [[]]*(n*n)
         dir = [[] for _ in range(n+1)]

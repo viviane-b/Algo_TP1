@@ -1,5 +1,5 @@
-#Nom, Matricule
-#Nom, Matricule
+# Cassandre Hamel, 20210863
+# Viviane Binet, 20244728
 
 # cette classe sert a créer les cartes visuelles du jeu dans le dossier "results"
 # this class is used to create the game visual cards in the "results" folder
