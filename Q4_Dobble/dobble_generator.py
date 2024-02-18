@@ -5,6 +5,7 @@
 # this class is used to create the game cards in the cartes.txt file
 
 import random # pour le melange des symboles sur chaque carte # for mixing symbols on each card
+import math
 
 class Generator():
     def __init__(self, order = 7):
@@ -16,7 +17,7 @@ class Generator():
 
         # Assigner les bons symboles aux cartes
         n = self.order
-        #length = n*n+n+1
+    
 
         # initialize matrix
         matrixNN = [[] for _ in range(n*n)]
@@ -27,11 +28,10 @@ class Generator():
         for k in range(n):        #les n*n premieres directions
 
             for s in range(n):           #une case sur chaque ligne  
-                #print("s=", s)
+                
 
                 for i in range (n):     #chaque symbole dans une meme direction 
-                    #print("i=",i)
-                    #print(i*n+ (s+((i*k)%n))%(n))
+                    
                     matrixNN[i*n+ (s+((i*k)%n))%(n) ].append(symbol)
 
 
@@ -50,46 +50,43 @@ class Generator():
             s.append(symbol)
         
 
-        print(matrixNN)
-        print(dir)
+        
 
+        cards = matrixNN + dir
+        print(cards)
 
 
         # Randomization
-        #TODO : trouver algo pour randomizer
+        # https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+        # Fisher-Yates shuffle
+        temp = 0
+
+        for card in cards:
+            for i in range (len(card)):
+                r = math.floor(i*random.random())
+                temp = card[i]
+                card[i]=card[r]
+                card[r]=temp
+        print(cards)        
+
+
+
+
 
 
         # ecrire fichier
         towrite = ""
-        for line in matrixNN:
+        for line in cards:
             for number in line:
                 towrite += str(number) + " "
             towrite += "\n"
 
+        
+        
+        file = open(cards_file, "w")
+        file.write(towrite)
+        file.close()  
+
+    
 
 
-    def write(fileName, content):
-    #écrire la sortie dans un fichier/write output in file
-        file = open(fileName, "w")
-        file.write(content)
-        file.close()    
-
-
-
-        # TODO
-        # a completer
-
-        # melange aleatoire des symboles sur les cartes,
-        # pour ne pas avoir des répétitions de symboles sur les mêmes endroits des cartes
-        # random mixing of symbols on the cards,
-        # so as not to have repetitions of symbols on the same places on the cards
-            
-        # TODO
-        # a completer
-
-
-        # ecriture des cartes dans le fichier cards_file
-        # writing cards in the cards_file file
-            
-        # TODO
-        # a completer
