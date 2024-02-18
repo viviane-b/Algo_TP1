@@ -4,10 +4,10 @@
 # cette classe sert a créer les cartes visuelles du jeu dans le dossier "results"
 # this class is used to create the game visual cards in the "results" folder
 
-#from PIL import Image
-#import os
-#import math
-#import random
+from PIL import Image
+import os
+import math
+import random
 
 # info :
 # https://pillow.readthedocs.io/en/stable/reference/Image.html
