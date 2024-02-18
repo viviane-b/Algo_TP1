@@ -13,7 +13,7 @@
 #include "PrimeCalculator.h" // pour la classe principale de l'exercice // for the main class of the exercise
 #include <vector> // pour utiliser les vecteurs de la librairie standard // to use vectors from the standard library
 #include <cstdlib> // pour convertir le input en int // to convert input to int
-
+#include <time.h>
 // commandes / command (PowerShell) :
 // g++ -o nth_prime.exe nth_prime.cpp PrimeCalculator.cpp
 // .\nth_prime.exe 100
@@ -42,18 +42,26 @@ int main(int argc, char *argv[])
         }
         
     }
-
+    int start = clock();
     PrimeCalculator Calculator = PrimeCalculator();
     int NthPrime = Calculator.CalculateNthPrime(N);
-
+    int end = clock();
     std::cout << "Le / The " << N << "e nombre premier est / th prime nomber is : ";
     std::cout << NthPrime << std::endl;
+    std::cout << "Total time: " << ((float)end - start)/CLOCKS_PER_SEC << " Kachow!" << std::endl;
 
     // tests
+    int start2 = clock();
     if (TestPrimeCalculator()){
         std::cout << "Tests reussis / Tests passed !" << std::endl;
+        int end2 = clock();
+        std::cout << "Total time: " << ((float)end - start)/CLOCKS_PER_SEC << " Kachow!" << std::endl;
+
     } else {
         std::cout << "Tests echoues / Failed tests :(" << std::endl;
+        int end2 = clock();
+        std::cout << "Total time: " << ((float)end - start)/CLOCKS_PER_SEC << " Kachow!" << std::endl;
+
     }
 
 }
